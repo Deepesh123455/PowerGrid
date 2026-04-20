@@ -52,7 +52,7 @@ export default function ChatPage() {
           </div>
 
           {/* Info Cards - Grid on Mobile, Sidebar on Desktop */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:col-span-1 gap-4 md:gap-6 order-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col lg:col-span-1 gap-4 md:gap-6 order-2">
             {/* Quick Tips */}
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 sm:p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
               <div className="flex items-center gap-3 mb-4">
