@@ -10,7 +10,7 @@ Follow these steps to deploy your application to **Render** (Backend) and **Verc
 2. **Configure Settings**:
    - **Root Directory**: `backend`
    - **Environment**: `Node`
-   - **Build Command**: `npm install && npm run build`
+   - **Build Command**: `npm install && npm run build && ls -R dist`
    - **Start Command**: `node dist/server.js`
 3. **Add Environment Variables**:
    Go to the "Environment" tab in Render and add:

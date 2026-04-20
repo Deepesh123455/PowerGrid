@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "test": "jest",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
