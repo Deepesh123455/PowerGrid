@@ -2,29 +2,28 @@
 
 Follow these steps to deploy your application to **Render** (Backend) and **Vercel** (Frontend) without issues.
 
-## Phase 1: Backend Deployment (Render)
+## Phase 1: Backend Deployment (Render Blueprints - RECOMMENDED)
 
-1. **Create a new Web Service**:
-   - Link your GitHub repository.
-   - Choose the `main` branch.
-2. **Configure Settings**:
-   - **Root Directory**: `backend`
-   - **Environment**: `Node`
-   - **Build Command**: `npm install && npm run build && ls -R dist`
-   - **Start Command**: `node dist/server.js`
-3. **Add Environment Variables**:
-   Go to the "Environment" tab in Render and add:
-   - `DATABASE_URL`: (Your PostgreSQL connection string)
-   - `REDIS_URL`: (Your Redis connection string)
-   - `JWT_ACCESS_SECRET`: (Generate a long random string)
-   - `JWT_REFRESH_SECRET`: (Generate a long random string)
-   - `Test_Key_ID`: (Your Razorpay Test Key ID)
-   - `Test_Key_Secret`: (Your Razorpay Test Key Secret)
-   - `ALLOWED_ORIGINS`: `https://your-frontend-domain.vercel.app` (You'll get this after Phase 2)
-   - `NODE_ENV`: `production`
-   - `NPM_CONFIG_PRODUCTION`: `false` (IMPORTANT: This ensures devDependencies needed for build are not skipped)
-4. **Database Push**:
-   After the first build succeeds, you might need to run the database push locally pointing to the production database once, or add it to the build command: `npm install && npm run build && npm run db:push`.
+The most reliable way to deploy this monorepo is using the `render.yaml` file I created.
+
+1. **Go to Render Dashboard**:
+   - Click **"Blueprints"** in the sidebar.
+   - Click **"New Blueprint Instance"**.
+   - Select your GitHub repository.
+2. **Review Settings**:
+   - Render will automatically read the `render.yaml` and configure the "Root Directory", "Build Command", and "Start Command" for you.
+3. **Environment Variables**:
+   - During the setup, Render will ask you for values like `DATABASE_URL`, `REDIS_URL`, etc.
+   - Fill them in from your dashboard.
+4. **Deploy**:
+   - Click "Deploy". This ensures the pathing is perfectly handled.
+
+### Alternative: Manual Configuration
+If you prefer to configure it manually, ensure these exact settings:
+- **Root Directory**: `backend`
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: `node dist/server.js`
+- **NPM_CONFIG_PRODUCTION**: `false` (Standard Env Var)
 
 ---
 
