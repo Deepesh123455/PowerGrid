@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useAppStore } from './store/useAppStore';
+import { FloatingChatButton } from './features/chat/components/FloatingChatButton';
 
 function App() {
   const { theme } = useAppStore();
@@ -18,6 +19,7 @@ function App() {
       <main>
         <Outlet />
       </main>
+      <FloatingChatButton />
     </div>
   );
 }

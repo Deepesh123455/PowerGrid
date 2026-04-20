@@ -3,6 +3,7 @@ import App from '../App';
 import LoginPage from '../pages/LoginPage';
 import DashboardPage from '../pages/DashboardPage';
 import ApplianceSessionsPage from '../pages/ApplianceSessionsPage';
+import ChatPage from '../pages/ChatPage';
 import ProtectedRoute from '../components/ProtectedRoute';
 import RootErrorBoundary from '../components/RootErrorBoundary';
 import ProfilePage from '../pages/ProfilePage';
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
                     {
                         path: 'dashboard',
                         element: <DashboardPage />,
+                    },
+                    {
+                        path: 'chat',
+                        element: <ChatPage />,
                     },
                     {
                         path: 'sessions',

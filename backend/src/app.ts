@@ -19,6 +19,7 @@ import applianceSessionRouter from './routes/applianceSession.routes.js';
 import alertRouter from './routes/alert.routes.js';
 import locationRouter from './routes/location.routes.js';
 import billingRouter from './routes/billing.routes.js';
+import chatRouter from './routes/chat.routes.js';
 
 const app = express();
 
@@ -109,6 +110,8 @@ app.use('/api/v1/billing', billingRouter);
 console.log('✅ /api/v1/billing');
 app.use('/api/v1', applianceSessionRouter);
 console.log('✅ /api/v1 (applianceSession)');
+app.use('/api/v1/chat', chatRouter);
+console.log('✅ /api/v1/chat');
 
 // 5) 404 HANDLER
 app.all('*', (req: Request, res: Response, next: NextFunction) => {
